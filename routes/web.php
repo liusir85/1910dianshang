@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 
 
-Route::get('/user/reg','User\IndexController@reg');
+
