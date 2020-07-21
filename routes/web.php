@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::prefix('/index')->group(function (){
     Route::view('/index','Index.index'); //前台展示
     Route::view('/product_list','Index.product_list'); //商品展示
-    Route::view('/shop_single','Index.shop_single');   //个人购物清单
+    Route::view('/shop_single','Index.shop_single');   //订单
     Route::view('/wishlist','Index.wishlist');  //我的收藏
     Route::view('/cart','Index.cart');  //购物车
     Route::view('/checkout','Index.checkout');  //支付
@@ -33,8 +33,7 @@ Route::prefix('/index')->group(function (){
     Route::view('/setting','Index.setting');    //设置
     Route::view('/login','Index.login');       //登录
     Route::view('/register','Index.register');   //注册
-
-
-
 });
+
+
 
