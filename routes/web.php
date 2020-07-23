@@ -31,8 +31,12 @@ Route::prefix('/index')->group(function (){
     Route::view('/about_us','Index.about_us');  //关于我们
     Route::view('/contact','Index.contact');    //联系人
     Route::view('/setting','Index.setting');    //设置
-    Route::view('/login','Index.login');       //登录
-    Route::view('/register','Index.register');   //注册
+//    登录
+    Route::view('/login','Index.login');
+    Route::post('/login','Index\IndexController@login');
+//    注册
+    Route::view('/register','Index.register');
+    Route::post('/register','Index\IndexController@register');
 });
 
 

@@ -44,11 +44,11 @@
             <img src="/Index/img/profile.jpg" alt="">
             <h2>John Doe</h2>
         </li>
-        <li><a href="{{url('index/setting')}}"><i class="fa fa-cog"></i>Settings</a></li>
+        <li><a href="{{url('index/setting')}}"><i class="fa fa-cog"></i>个人信息</a></li>
         <li><a href="{{url('index/about_us')}}"><i class="fa fa-user"></i>About Us</a></li>
-        <li><a href="{{url('index/contact')}}"><i class="fa fa-envelope-o"></i>Contact Us</a></li>
-        <li><a href="{{url('index/login')}}"><i class="fa fa-sign-in"></i>Login</a></li>
-        <li><a href="{{url('index/register')}}"><i class="fa fa-user-plus"></i>Register</a></li>
+        <li><a href="{{url('index/contact')}}"><i class="fa fa-envelope-o"></i>联系客服</a></li>
+        <li><a href="{{url('index/login')}}"><i class="fa fa-sign-in"></i>登录</a></li>
+        <li><a href="{{url('index/register')}}"><i class="fa fa-user-plus"></i>注册</a></li>
     </ul>
 </div>
 <!-- end side nav right-->

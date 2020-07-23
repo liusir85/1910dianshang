@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\CategoryModel;
+use App\Model\Admin\CategoryModel;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -84,7 +84,7 @@ class CategoryController extends AdminController
         $form->text('cat_name', __('Cat name'));
         $form->text('keywords', __('Keywords'));
         $form->text('cat_desc', __('Cat desc'));
-        $form->number('parent_id', __('Parent id'));
+        $form->select('parent_id', __('Parent id'))->options(CategoryModel::selectOptions());
         $form->switch('sort_order', __('Sort order'))->default(50);
         $form->text('template_file', __('Template file'));
         $form->text('measure_unit', __('Measure unit'));
