@@ -16,11 +16,14 @@ Route::get('/', function () {
 });
 
 //前台模块
-
+Route::get('/test','Index\IndexController@test');
 Route::prefix('/index')->group(function (){
-    Route::view('/index','Index.index'); //前台展示
+//    前台展示
+    Route::get('/index','Index\Product_listController@index'); //前台展示
+//    商品
     Route::view('/product_list','Index.product_list'); //商品展示
-    Route::view('/shop_single','Index.shop_single');   //订单
+    Route::get('/product_details/{good_id}','Index\Product_listController@product_details');   //商品详情
+
     Route::view('/wishlist','Index.wishlist');  //我的收藏
     Route::view('/cart','Index.cart');  //购物车
     Route::view('/checkout','Index.checkout');  //支付
