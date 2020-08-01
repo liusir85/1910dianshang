@@ -40,7 +40,12 @@ Route::prefix('/index')->group(function (){
 //    注册
     Route::view('/register','Index.register');
     Route::post('/register','Index\IndexController@register');
+
+
+
 });
+//    定时任务 <视频转码>
+Route::get('/vedioCron','Index\VedioCron@codec');
 
 
 

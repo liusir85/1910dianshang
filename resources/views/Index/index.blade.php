@@ -90,7 +90,7 @@
 </div>
 <!-- end quote -->
 
-<!-- product -->
+<!-- product_new -->
 <div class="section product">
     <div class="container">
         <div class="section-head">
@@ -115,7 +115,7 @@
         </div>
     </div>
 </div>
-<!-- end product -->
+<!-- end product_new -->
 
 <!-- promo -->
 <div class="promo section">
@@ -129,7 +129,7 @@
 </div>
 <!-- end promo -->
 
-<!-- product -->
+<!-- product_hot -->
 <div class="section product">
     <div class="container">
         <div class="section-head">
@@ -142,17 +142,17 @@
             @foreach($is_hot as $v)
             <div class="col s6 row margin-bottom">
                 <div class="content">
-                    <img src="/Index/img/product-new3.png" alt="">
-                    <h6><a href="">Fashion Men's</a></h6>
+                    <a href="{{url('/index/product_details/'.$v['goods_id'])}}"><img src="/Index/img/product-new3.png" alt=""></a>
+                    <h6><a href="{{url('/index/product_details/'.$v['goods_id'])}}">{{$v['goods_name']}}</a></h6>
                     <div class="price">
-                        $20 <span>$28</span>
+                        ${{$v['shop_price']}} <span>$28</span>
                     </div>
-                    <button class="btn button-default">加入购物车</button>
+                    <a href="{{url('/index/product_details/'.$v['goods_id'])}}"><button class="btn button-default">加入购物车</button></a>
                 </div>
             </div>
             @endforeach
         </div>
     </div>
 </div>
-<!-- end product -->
+<!-- end product_hot -->
 @endsection

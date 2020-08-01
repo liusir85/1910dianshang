@@ -13,8 +13,9 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('/shop/category', CategoryController::class);
-    $router->resource('/shop/commodity', CommodityController::class);
+    $router->resource('/shop/goods', GoodsController::class);
     $router->resource('/shop/order', OrderController::class);
+    $router->resource('/shop/vedio', VedioController::class);
 });
 
 
