@@ -27,7 +27,6 @@ class VedioCron extends Controller
                 //开始转码
                 VideoModel::where(['goods_id'=>$goods_id])->update(['status'=>1]);      //更新转码状态为 1  开始转码
 
-
                 fastcgi_finish_request();       // ???
                 //转码
                 $video_file = $v->path;
@@ -37,10 +36,14 @@ class VedioCron extends Controller
                 $ts_file = $video_out_path.$goods_id.'_%03d.ts';        //分片文件名
                 $ts_second = 20;                        // 分片视频长度 秒
 
-                $cmd = "cd public/storage && ffmpeg -i {$video_file} -codec:v libx264 -codec:a mp3 -map 0 -f ssegment -segment_format mpegts -segment_list $m3u8_file -segment_time $ts_second $ts_file";
+                $cmd = "cd storage && ffmpeg -i {$video_file} -codec:v libx264 -codec:a mp3 -map 0 -f ssegment -segment_format mpegts -segment_list $m3u8_file -segment_time $ts_second $ts_file";
 //                echo $cmd;
                 shell_exec($cmd);
-                VideoModel::where(['goods_id'=>$goods_id])->update(['status'=>2,'m3u8'=>$m3u8_file]);  //更新转码状态为完成
+                $status = VideoModel::where(['goods_id'=>$goods_id])->update(['status'=>2,'m3u8'=>$m3u8_file]);  //更新转码状态为完成
+                if ($status){
+                    $code = date('Y-m-d H:i:s',time())."\n".$video_file.'视频文件转码成功,转码文件:'.$m3u8_file."\n";
+                    file_put_contents('/tmp/videoCcode.log',$code,FILE_APPEND);
+                }
             }
         }
 

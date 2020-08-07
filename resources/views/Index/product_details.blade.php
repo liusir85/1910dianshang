@@ -6,17 +6,18 @@
         <div class="container">
             <div class="shop-single">
                 <img src="{{$good_info['goods_img']}}" alt="">
+                <div class="prism-player" id="player-con"></div><br>
                 <h5>{{$good_info['goods_name']}}</h5>
                 <div class="price">${{$good_info['shop_price']}} <span>$28</span></div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam eaque in non delectus, error iste veniam commodi mollitia, officia possimus, repellendus maiores doloribus provident. Itaque, ab perferendis nemo tempore! Accusamus</p>
-                <button type="button" class="btn button-default">加入购物车</button>
+                <a href="{{url('/index/addcart/'.$good_info['goods_id'])}}"><button type="button" class="btn button-default">加入购物车</button></a>
             </div>
             <div class="review">
+
                 <h5>全部评价:</h5>
-                
                 <div class="review-details">
                     <div class="col s3">
-                        <img src="img/user-comment.jpg" alt="" class="responsive-img">
+                        <img src="" alt="" class="responsive-img">
                     </div>
                     <div class="col s9">
                         <div class="review-title">
@@ -55,6 +56,24 @@
         </div>
     </div>
     <!-- end product_details -->
+    <script>
+        var player = new Aliplayer({
+                "id": "player-con",
+                "source": "/storage/{{$good_video['m3u8']}}",
+                "width": "70%",
+                "height": "370px",
+                "autoplay": true,
+                "isLive": false,
+                "rePlay": false,
+                "playsinline": true,
+                "preload": true,
+                "controlBarVisibility": "hover",
+                "useH5Prism": true
+            }, function (player) {
+                console.log("The player is created");
+            }
+        );
+    </script>
 @endsection
 
 

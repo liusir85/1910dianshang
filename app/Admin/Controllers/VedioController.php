@@ -29,6 +29,7 @@ class VedioController extends AdminController
         $grid->column('id', __('Id'));
         $grid->column('goods_id', __('Goods id'));
         $grid->column('path', __('Path'));
+        $grid->column('status', __('Status'));
         return $grid;
     }
 

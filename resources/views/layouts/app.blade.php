@@ -18,8 +18,12 @@
     <link rel="stylesheet" href="/Index/css/fakeLoader.css">
     <link rel="stylesheet" href="/Index/css/animate.css">
     <link rel="stylesheet" href="/Index/css/style.css">
-
     <link rel="shortcut icon" href="/Index/img/favicon.png">
+    <link rel="stylesheet" href="/Index/css/aliplayer-min.css">
+    <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.8.8/skins/default/aliplayer-min.css" />
+    <script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/de/prismplayer/2.8.8/aliplayer-min.js"></script>
+
+
 
 </head>
 <body>
@@ -269,6 +273,7 @@
         <div class="cart-menu">
             <div class="container">
                 <div class="content">
+
                     <div class="cart-1">
                         <div class="row">
                             <div class="col s5">
@@ -304,40 +309,7 @@
                         </div>
                     </div>
                     <div class="divider"></div>
-                    <div class="cart-2">
-                        <div class="row">
-                            <div class="col s5">
-                                <img src="/Index/img/cart-menu2.png" alt="">
-                            </div>
-                            <div class="col s7">
-                                <h5><a href="">Fashion Men's</a></h5>
-                            </div>
-                        </div>
-                        <div class="row quantity">
-                            <div class="col s5">
-                                <h5>Quantity</h5>
-                            </div>
-                            <div class="col s7">
-                                <input value="1" type="text">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col s5">
-                                <h5>Price</h5>
-                            </div>
-                            <div class="col s7">
-                                <h5>$20</h5>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col s5">
-                                <h5>Action</h5>
-                            </div>
-                            <div class="col s7">
-                                <div class="action"><i class="fa fa-trash"></i></div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="total">
                     <div class="row">

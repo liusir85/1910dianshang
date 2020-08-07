@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Index;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Index\GoodsModel;
+use App\Model\Admin\VideoModel;
 class Product_listController extends Controller
 {
     //
@@ -21,10 +22,19 @@ class Product_listController extends Controller
 
     public function product_details($good_id){
         $good_info = GoodsModel::find($good_id);
-        if ($good_id){
+        if ($good_info){
             $good_info = $good_info->toArray();
+        }else{
+            return view('Index/error_404');
         }
-        return view('Index.product_details',['good_info'=>$good_info]);
+        $good_video = VideoModel::where('goods_id',$good_id)->first('m3u8');
+        if ($good_video){
+            $good_video = $good_video->toArray();
+        }else{
+            return view('Index/error_404');
+        }
+
+        return view('Index.product_details',['good_info'=>$good_info,'good_video'=>$good_video]);
     }
 
 
